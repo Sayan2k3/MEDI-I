@@ -32,87 +32,45 @@ function getBotResponse(input) {
         return getReligareCareInfo();
     } else if (lowerInput.includes("compare star health and religare care")) {
         return compareStarHealthAndReligare();
+    } else if (lowerInput.includes("help") || lowerInput.includes("insurance")) {
+        return "I'm here to help! Please ask about specific insurance policies or coverage.";
+    } else if (lowerInput.includes("hospital") || lowerInput.includes("doctor") || lowerInput.includes("medicine") || lowerInput.includes("treatment")) {
+        return getGeneralMedicalAdvice();
     } else {
-        return "I'm sorry I am under maintainance";
+        return getGenericMedicalResponse();
     }
 }
 
-// Function to get detailed information about Star Health Diabetes Safe Insurance Policy
-function getStarHealthDiabetesInfo() {
+// Function to get general medical advice
+function getGeneralMedicalAdvice() {
     return `
         <div>
-            <h3>Star Health Diabetes Safe Insurance Policy</h3>
-            <p><strong>Overview:</strong> This policy is specifically designed for individuals with diabetes. It offers extensive coverage for hospitalization and treatment.</p>
-            <h4>Merits:</h4>
+            <h3>General Medical Advice</h3>
+            <p>It's always important to seek medical attention when experiencing unusual symptoms. Here's some general advice:</p>
             <ul>
-                <li>Coverage for pre-existing diabetes-related complications.</li>
-                <li>Annual health check-ups included.</li>
-                <li>Cashless hospitalization across network hospitals.</li>
+                <li>Stay hydrated and eat a balanced diet to maintain overall health.</li>
+                <li>Exercise regularly to boost your immune system and mental well-being.</li>
+                <li>Consult a doctor for any persistent symptoms, and never self-medicate without proper guidance.</li>
+                <li>Ensure you're up to date on vaccinations and preventive screenings.</li>
             </ul>
-            <h4>Demerits:</h4>
-            <ul>
-                <li>Higher premium costs due to specific coverage.</li>
-                <li>May have sub-limits on certain treatments.</li>
-            </ul>
-            <h4>Coverage Details:</h4>
-            <table border="1">
-                <tr>
-                    <th>Coverage</th>
-                    <th>Details</th>
-                </tr>
-                <tr>
-                    <td>Sum Insured</td>
-                    <td>Up to ₹1 Crore</td>
-                </tr>
-                <tr>
-                    <td>Age Limit</td>
-                    <td>Coverage available for individuals aged 18 to 65</td>
-                </tr>
-                <tr>
-                    <td>Waiting Period</td>
-                    <td>30 days for accidents, 1-4 years for pre-existing diseases</td>
-                </tr>
-            </table>
+            <p>If you need specific information about a particular treatment, hospital, or doctor, please ask!</p>
         </div>
     `;
 }
 
-// Function to get detailed information about Religare Care Health Insurance
-function getReligareCareInfo() {
+// Function for a generic medical response
+function getGenericMedicalResponse() {
     return `
         <div>
-            <h3>Religare Care Health Insurance</h3>
-            <p><strong>Overview:</strong> A comprehensive health insurance plan providing coverage for various medical needs.</p>
-            <h4>Merits:</h4>
+            <h3>I'm here to assist you with health-related information!</h3>
+            <p>You can ask about:</p>
             <ul>
-                <li>High sum insured options available.</li>
-                <li>No room rent capping.</li>
-                <li>Free health check-ups and preventive care benefits.</li>
+                <li>Health insurance policies</li>
+                <li>Comparing different insurance plans</li>
+                <li>General health tips</li>
+                <li>Information about hospitals or doctors</li>
             </ul>
-            <h4>Demerits:</h4>
-            <ul>
-                <li>May not cover specific critical illnesses.</li>
-                <li>Higher premium for comprehensive coverage.</li>
-            </ul>
-            <h4>Coverage Details:</h4>
-            <table border="1">
-                <tr>
-                    <th>Coverage</th>
-                    <th>Details</th>
-                </tr>
-                <tr>
-                    <td>Sum Insured</td>
-                    <td>Up to ₹6 Crore</td>
-                </tr>
-                <tr>
-                    <td>Age Limit</td>
-                    <td>No age limit for enrollment</td>
-                </tr>
-                <tr>
-                    <td>Waiting Period</td>
-                    <td>30 days for accidents, specific waiting period for pre-existing conditions</td>
-                </tr>
-            </table>
+            <p>Please ask about any specific topic you're interested in.</p>
         </div>
     `;
 }
